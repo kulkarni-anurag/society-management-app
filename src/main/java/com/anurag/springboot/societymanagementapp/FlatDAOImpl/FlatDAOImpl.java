@@ -21,8 +21,8 @@ public class FlatDAOImpl implements FlatDAO {
 
     @Override
     public int create(Flat flat) {
-        String sql = "INSERT INTO flats (number, wing) values (?, ?)";
-        int create = jdbcTemplate.update(sql, flat.getNumber(), flat.getWing());
+        String sql = "INSERT INTO flats (number, wing, rooms, balcony, area) values (?, ?, ?, ?, ?)";
+        int create = jdbcTemplate.update(sql, flat.getNumber(), flat.getWing(), flat.getRooms(), flat.isBalcony(), flat.getArea());
         return create;
     }
 
