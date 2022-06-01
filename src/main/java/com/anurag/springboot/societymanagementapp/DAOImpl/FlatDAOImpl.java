@@ -5,10 +5,15 @@ import java.util.List;
 import com.anurag.springboot.societymanagementapp.DAO.FlatDAO;
 import com.anurag.springboot.societymanagementapp.model.Flat;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 
+@Component("flatDao")
 public class FlatDAOImpl implements FlatDAO {
+
+    @Autowired
     private JdbcTemplate jdbcTemplate;
 
     public JdbcTemplate getJdbcTemplate() {
