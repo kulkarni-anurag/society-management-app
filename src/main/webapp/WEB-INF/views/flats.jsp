@@ -22,11 +22,11 @@
                     <form:form method="post" modelAttribute="flat">
                         <div class="form-group">
                             <form:label path="fl_no">Flat Number:</form:label>
-                            <form:input type="text" class="form-control" path="fl_no" placeholder="Enter Flat Number" />
+                            <form:input type="text" class="form-control" path="fl_no" placeholder="Enter Flat Number" required />
                         </div>
                         <div class="form-group">
                             <form:label path="rooms">No. of Rooms:</form:label>
-                            <form:input type="number" class="form-control" path="rooms" placeholder="Enter Flat Number" />
+                            <form:input type="number" class="form-control" path="rooms" placeholder="Enter No. of Rooms" required />
                         </div>
                         <div class="form-group">
                             <div class="form-check">
@@ -36,7 +36,7 @@
                         </div>
                         <div class="form-group">
                             <form:label path="area">Area:</form:label>
-                            <form:input type="number" class="form-control" path="area" placeholder="Enter Area" />
+                            <form:input type="number" class="form-control" path="area" placeholder="Enter Area" required />
                         </div>
                         <div class="form-group">
                             <center>
