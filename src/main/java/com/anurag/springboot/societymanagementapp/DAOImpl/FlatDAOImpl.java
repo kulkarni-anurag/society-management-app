@@ -27,8 +27,15 @@ public class FlatDAOImpl implements FlatDAO {
     }
 
     @Override
+    public int update(Flat flat) {
+        String sql = "UPDATE flats SET rooms = ?, balcony = ?, area = ? WHERE fl_no = ?";
+        int update = jdbcTemplate.update(sql, flat.getRooms(), flat.isBalcony(), flat.getArea(), flat.getFl_no());
+        return update;
+    }
+
+    @Override
     public int delete(String fl_no) {
-        String sql = "DELETE FROM flats WHERE flat_number = ?";
+        String sql = "DELETE FROM flats WHERE fl_no = ?";
         jdbcTemplate.update(sql, fl_no);
         return 0;
     }
