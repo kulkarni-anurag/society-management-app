@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,13 +29,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>F203</td>
-                            <td>5</td>
-                            <td>true</td>
-                            <td>1200</td>
-                            <td><button class="btn btn-primary">Actions</button></td>
-                        </tr>
+                        <c:forEach items="${flats}" var="flat">
+                            <tr>
+                                <td>${flat.fl_no}</td>
+                                <td>${flat.rooms}</td>
+                                <td>${flat.balcony}</td>
+                                <td>${flat.area}</td>
+                                <td><button class="btn btn-primary">Actions</button></td>
+                            </tr>
+                        </c:forEach>
                     </tbody>
                 </table>
             </div>
