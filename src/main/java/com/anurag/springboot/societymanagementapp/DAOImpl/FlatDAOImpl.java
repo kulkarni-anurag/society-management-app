@@ -1,9 +1,9 @@
-package com.anurag.springboot.societymanagementapp.FlatDAOImpl;
+package com.anurag.springboot.societymanagementapp.DAOImpl;
 
 import java.util.List;
 
-import com.anurag.springboot.societymanagementapp.FlatDAO.FlatDAO;
-import com.anurag.springboot.societymanagementapp.flat.Flat;
+import com.anurag.springboot.societymanagementapp.DAO.FlatDAO;
+import com.anurag.springboot.societymanagementapp.model.Flat;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -21,15 +21,15 @@ public class FlatDAOImpl implements FlatDAO {
 
     @Override
     public int create(Flat flat) {
-        String sql = "INSERT INTO flats (flat_number, rooms, balcony, area) values (?, ?, ?, ?)";
-        int create = jdbcTemplate.update(sql, flat.getFlat_number(), flat.getRooms(), flat.isBalcony(), flat.getArea());
+        String sql = "INSERT INTO flats (fl_no, rooms, balcony, area) values (?, ?, ?, ?)";
+        int create = jdbcTemplate.update(sql, flat.getFl_no(), flat.getRooms(), flat.isBalcony(), flat.getArea());
         return create;
     }
 
     @Override
-    public int delete(String flat_number) {
+    public int delete(String fl_no) {
         String sql = "DELETE FROM flats WHERE flat_number = ?";
-        jdbcTemplate.update(sql, flat_number);
+        jdbcTemplate.update(sql, fl_no);
         return 0;
     }
 

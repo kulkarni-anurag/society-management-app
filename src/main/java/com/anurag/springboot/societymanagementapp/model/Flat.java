@@ -1,17 +1,17 @@
-package com.anurag.springboot.societymanagementapp.flat;
+package com.anurag.springboot.societymanagementapp.model;
 
 public class Flat {
-    private String flat_number;
+    private String fl_no;
     private int rooms;
     private boolean balcony;
     private double area;
 
-    public String getFlat_number() {
-        return flat_number;
+    public String getFl_no() {
+        return fl_no;
     }
 
-    public void setFlat_number(String flat_number) {
-        this.flat_number = flat_number;
+    public void setFl_no(String fl_no) {
+        this.fl_no = fl_no;
     }
 
     public int getRooms() {
@@ -40,6 +40,6 @@ public class Flat {
 
     @Override
     public String toString() {
-        return "Flat [flat_number=" + flat_number + ", rooms=" + rooms + ", balcony=" + balcony + ", area=" + area + "]";
+        return "Flat [flat_number=" + fl_no + ", rooms=" + rooms + ", balcony=" + balcony + ", area=" + area + "]";
     }
 }
