@@ -5,17 +5,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.anurag.springboot.societymanagementapp.DAO.FlatDAO;
+import com.anurag.springboot.societymanagementapp.services.FlatsService;
 
 @Controller
 public class FlatsController {
 
     @Autowired
-    private FlatDAO flatDao;
+    private FlatsService service;
 
     @GetMapping(value = "/list-flats")
     public String listFlats(ModelMap model){
-        model.addAttribute("flats", flatDao.read());
+        model.addAttribute("flats", service.getAllFlats());
         return "list-flats";
     }
 
