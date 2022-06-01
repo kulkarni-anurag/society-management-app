@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,31 +19,31 @@
         <div class="row justify-content-center">
             <div class="card col-lg-8">
                 <div class="card-body">
-                    <form>
+                    <form:form method="post" modelAttribute="flat">
                         <div class="form-group">
-                            <label for="fl_no">Flat Number:</label>
-                            <input type="text" class="form-control" name="fl_no" placeholder="Enter Flat Number" />
+                            <form:label path="fl_no">Flat Number:</form:label>
+                            <form:input type="text" class="form-control" path="fl_no" placeholder="Enter Flat Number" />
                         </div>
                         <div class="form-group">
-                            <label for="rooms">No. of Rooms:</label>
-                            <input type="number" class="form-control" name="rooms" placeholder="Enter Flat Number" />
+                            <form:label path="rooms">No. of Rooms:</form:label>
+                            <form:input type="number" class="form-control" path="rooms" placeholder="Enter Flat Number" />
                         </div>
                         <div class="form-group">
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" name="balcony" value="true" />
-                                <label for="balcony" class="form-check-label">Balcony</label>
+                                <form:checkbox class="form-check-input" path="balcony" value="true" />
+                                <form:label path="balcony" class="form-check-label">Balcony</form:label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="area">Area:</label>
-                            <input type="number" class="form-control" name="area" placeholder="Enter Area" />
+                            <form:label path="area">Area:</form:label>
+                            <form:input type="number" class="form-control" path="area" placeholder="Enter Area" />
                         </div>
                         <div class="form-group">
                             <center>
                                 <input type="submit" class="btn btn-success" />
                             </center>
                         </div>
-                    </form>
+                    </form:form>
                 </div>
             </div>
         </div>

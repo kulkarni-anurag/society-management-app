@@ -6,6 +6,17 @@ public class Flat {
     private boolean balcony;
     private double area;
 
+    public Flat() {
+        super();
+    }
+
+    public Flat(String fl_no, int rooms, boolean balcony, double area) {
+        this.fl_no = fl_no;
+        this.rooms = rooms;
+        this.balcony = balcony;
+        this.area = area;
+    }
+
     public String getFl_no() {
         return fl_no;
     }

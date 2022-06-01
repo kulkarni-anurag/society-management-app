@@ -17,4 +17,8 @@ public class FlatsService {
     public List<Flat> getAllFlats(){
         return flatDao.read();
     }
+
+    public void addFlat(Flat flat){
+        flatDao.create(flat);
+    }
 }
