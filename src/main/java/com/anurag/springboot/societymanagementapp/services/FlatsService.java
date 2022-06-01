@@ -18,7 +18,15 @@ public class FlatsService {
         return flatDao.read();
     }
 
+    public Flat getOneFlat(String fl_no){
+        return flatDao.read(fl_no);
+    }
+
     public void addFlat(Flat flat){
         flatDao.create(flat);
+    }
+
+    public void updateFlat(Flat flat){
+        flatDao.update(flat);
     }
 }

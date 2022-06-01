@@ -52,5 +52,13 @@ public class FlatDAOImpl implements FlatDAO {
         List<Flat> result = jdbcTemplate.query(sql, rowMapper);
         return result;
     }
+
+    @Override
+    public Flat read(String fl_no) {
+        String sql = "SELECT * FROM Flats WHERE fl_no = ?";
+        BeanPropertyRowMapper<Flat> rowMapper = BeanPropertyRowMapper.newInstance(Flat.class);
+        Flat result = jdbcTemplate.queryForObject(sql, rowMapper, fl_no);
+        return result;
+    }
     
 }

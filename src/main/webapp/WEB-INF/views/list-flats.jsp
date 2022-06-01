@@ -35,7 +35,7 @@
                                 <td>${flat.rooms}</td>
                                 <td>${flat.balcony}</td>
                                 <td>${flat.area}</td>
-                                <td><button class="btn btn-primary">Actions</button></td>
+                                <td><a href="/update-flat?fl_no=${flat.fl_no}" class="btn btn-primary">Update</a></td>
                             </tr>
                         </c:forEach>
                     </tbody>

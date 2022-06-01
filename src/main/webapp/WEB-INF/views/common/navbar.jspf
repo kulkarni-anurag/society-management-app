@@ -14,7 +14,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Manage Flats</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="./list-flats">List Flats</a>
-                    <a class="dropdown-item" href="./flats">Add Flats</a>
+                    <a class="dropdown-item" href="./add-flat">Add Flats</a>
                 </div>
             </li>
         </ul>

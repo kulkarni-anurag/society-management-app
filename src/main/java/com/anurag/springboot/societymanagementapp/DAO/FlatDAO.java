@@ -8,5 +8,6 @@ public interface FlatDAO {
     int create(Flat flat);
     int update(Flat flat);
     int delete(String fl_no);
+    Flat read(String fl_no);
     List<Flat> read();
 }

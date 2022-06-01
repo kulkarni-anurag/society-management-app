@@ -6,6 +6,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.anurag.springboot.societymanagementapp.model.Flat;
 import com.anurag.springboot.societymanagementapp.services.FlatsService;
@@ -22,15 +23,27 @@ public class FlatsController {
         return "list-flats";
     }
 
-    @GetMapping(value = "/flats")
+    @GetMapping(value = "/add-flat")
     public String showAddFlatsPage(ModelMap model){
         model.addAttribute("flat", new Flat());
         return "flats";
     }
 
-    @PostMapping(value = "/flats")
-    public String handleAddOrUpdateFlat(@ModelAttribute("flat") Flat flat, ModelMap model){
+    @PostMapping(value = "/add-flat")
+    public String handleAddFlat(@ModelAttribute("flat") Flat flat, ModelMap model){
         service.addFlat(flat);
+        return "redirect:list-flats";
+    }
+
+    @GetMapping(value = "/update-flat")
+    public String showUpdateFlatsPage(ModelMap model, @RequestParam String fl_no){
+        model.addAttribute("flat", service.getOneFlat(fl_no));
+        return "flats";
+    }
+
+    @PostMapping(value = "/update-flat")
+    public String handleUpdateFlat(@ModelAttribute("flat") Flat flat, ModelMap model){
+        service.updateFlat(flat);
         return "redirect:list-flats";
     }
 }
