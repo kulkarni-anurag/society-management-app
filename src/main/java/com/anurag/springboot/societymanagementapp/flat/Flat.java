@@ -1,26 +1,17 @@
 package com.anurag.springboot.societymanagementapp.flat;
 
 public class Flat {
-    private int number;
-    private String wing;
+    private String flat_number;
     private int rooms;
     private boolean balcony;
     private double area;
 
-    public int getNumber() {
-        return number;
+    public String getFlat_number() {
+        return flat_number;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    public String getWing() {
-        return wing;
-    }
-
-    public void setWing(String wing) {
-        this.wing = wing;
+    public void setFlat_number(String flat_number) {
+        this.flat_number = flat_number;
     }
 
     public int getRooms() {
@@ -49,6 +40,6 @@ public class Flat {
 
     @Override
     public String toString() {
-        return "Flat [number=" + number + ", wing=" + wing + ", rooms=" + rooms + ", balcony=" + balcony + ", area=" + area + "]";
+        return "Flat [flat_number=" + flat_number + ", rooms=" + rooms + ", balcony=" + balcony + ", area=" + area + "]";
     }
 }

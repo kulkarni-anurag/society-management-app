@@ -21,15 +21,15 @@ public class FlatDAOImpl implements FlatDAO {
 
     @Override
     public int create(Flat flat) {
-        String sql = "INSERT INTO flats (number, wing, rooms, balcony, area) values (?, ?, ?, ?, ?)";
-        int create = jdbcTemplate.update(sql, flat.getNumber(), flat.getWing(), flat.getRooms(), flat.isBalcony(), flat.getArea());
+        String sql = "INSERT INTO flats (flat_number, rooms, balcony, area) values (?, ?, ?, ?)";
+        int create = jdbcTemplate.update(sql, flat.getFlat_number(), flat.getRooms(), flat.isBalcony(), flat.getArea());
         return create;
     }
 
     @Override
-    public int delete(Flat flat) {
-        String sql = "DELETE FROM flats WHERE number = ? AND wing = ?";
-        jdbcTemplate.update(sql, flat.getNumber(), flat.getWing());
+    public int delete(String flat_number) {
+        String sql = "DELETE FROM flats WHERE flat_number = ?";
+        jdbcTemplate.update(sql, flat_number);
         return 0;
     }
 
