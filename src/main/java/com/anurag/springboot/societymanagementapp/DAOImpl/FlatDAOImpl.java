@@ -41,8 +41,8 @@ public class FlatDAOImpl implements FlatDAO {
     @Override
     public int delete(String fl_no) {
         String sql = "DELETE FROM Flats WHERE fl_no = ?";
-        jdbcTemplate.update(sql, fl_no);
-        return 0;
+        int delete = jdbcTemplate.update(sql, fl_no);
+        return delete;
     }
 
     @Override

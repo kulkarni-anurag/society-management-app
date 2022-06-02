@@ -23,6 +23,7 @@
                         <div class="form-group">
                             <form:label path="fl_no">Flat Number:</form:label>
                             <form:input type="text" class="form-control" path="fl_no" placeholder="Enter Flat Number" />
+                            <form:errors path="fl_no" />
                         </div>
                         <div class="form-group">
                             <form:label path="rooms">No. of Rooms:</form:label>

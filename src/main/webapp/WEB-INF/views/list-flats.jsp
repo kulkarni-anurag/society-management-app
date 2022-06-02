@@ -35,7 +35,15 @@
                                 <td>${flat.rooms}</td>
                                 <td>${flat.balcony}</td>
                                 <td>${flat.area}</td>
-                                <td><a href="/update-flat?fl_no=${flat.fl_no}" class="btn btn-primary">Update</a></td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Actions</button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="/update-flat?fl_no=${flat.fl_no}">Update Flat</a>
+                                            <a class="dropdown-item" href="/delete-flat?fl_no=${flat.fl_no}">Delete Flat</a>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                         </c:forEach>
                     </tbody>

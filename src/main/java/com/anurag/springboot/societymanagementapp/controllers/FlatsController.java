@@ -3,6 +3,7 @@ package com.anurag.springboot.societymanagementapp.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.anurag.springboot.societymanagementapp.model.Flat;
 import com.anurag.springboot.societymanagementapp.services.FlatsService;
+
+import jakarta.validation.Valid;
 
 @Controller
 public class FlatsController {
@@ -30,7 +33,10 @@ public class FlatsController {
     }
 
     @PostMapping(value = "/add-flat")
-    public String handleAddFlat(@ModelAttribute("flat") Flat flat, ModelMap model){
+    public String handleAddFlat(@Valid @ModelAttribute("flat") Flat flat, BindingResult result, ModelMap model){
+        if(result.hasErrors()){
+            return "flats";
+        }
         service.addFlat(flat);
         return "redirect:list-flats";
     }
@@ -42,8 +48,17 @@ public class FlatsController {
     }
 
     @PostMapping(value = "/update-flat")
-    public String handleUpdateFlat(@ModelAttribute("flat") Flat flat, ModelMap model){
+    public String handleUpdateFlat(@Valid @ModelAttribute("flat") Flat flat, BindingResult result, ModelMap model){
+        if(result.hasErrors()){
+            return "flats";
+        }
         service.updateFlat(flat);
+        return "redirect:list-flats";
+    }
+
+    @GetMapping(value = "/delete-flat")
+    public String handleDeleteFlat(@RequestParam String fl_no){
+        service.removeFlat(fl_no);
         return "redirect:list-flats";
     }
 }

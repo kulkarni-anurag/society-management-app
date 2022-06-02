@@ -29,4 +29,8 @@ public class FlatsService {
     public void updateFlat(Flat flat){
         flatDao.update(flat);
     }
+
+    public void removeFlat(String fl_no){
+        flatDao.delete(fl_no);
+    }
 }
