@@ -28,16 +28,19 @@
                         <div class="form-group">
                             <form:label path="rooms">No. of Rooms:</form:label>
                             <form:input type="number" class="form-control" path="rooms" placeholder="Enter No. of Rooms" />
+                            <form:errors path="rooms" />
                         </div>
                         <div class="form-group">
                             <div class="form-check">
                                 <form:checkbox class="form-check-input" path="balcony" value="true" />
                                 <form:label path="balcony" class="form-check-label">Balcony</form:label>
+                                <form:errors path="balcony" />
                             </div>
                         </div>
                         <div class="form-group">
                             <form:label path="area">Area:</form:label>
                             <form:input type="number" class="form-control" path="area" placeholder="Enter Area" />
+                            <form:errors path="area" />
                         </div>
                         <div class="form-group">
                             <center>
