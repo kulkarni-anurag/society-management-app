@@ -5,10 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 
 import com.anurag.springboot.societymanagementapp.DAO.OwnerDAO;
 import com.anurag.springboot.societymanagementapp.model.Owner;
 
+@Component("ownerDao")
 public class OwnerDAOImpl implements OwnerDAO {
 
     @Autowired
@@ -48,6 +50,14 @@ public class OwnerDAOImpl implements OwnerDAO {
         String sql = "SELECT * FROM Owners WHERE owner_id = ?";
         BeanPropertyRowMapper<Owner> rowMapper = BeanPropertyRowMapper.newInstance(Owner.class);
         Owner owner = jdbcTemplate.queryForObject(sql, rowMapper, owner_id);
+        return owner;
+    }
+
+    @Override
+    public Owner read(String email) {
+        String sql = "SELECT * FROM Owners WHERE email = ?";
+        BeanPropertyRowMapper<Owner> rowMapper = BeanPropertyRowMapper.newInstance(Owner.class);
+        Owner owner = jdbcTemplate.queryForObject(sql, rowMapper, email);
         return owner;
     }
     

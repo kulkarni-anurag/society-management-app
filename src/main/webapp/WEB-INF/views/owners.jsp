@@ -26,7 +26,7 @@
                 <div class="card-body">
                     <form:form method="post" modelAttribute="owner">
                         <div class="form-group">
-                            <form:hidden path="id" />
+                            <form:hidden path="owner_id" />
                         </div>
                         <div class="form-group">
                             <form:label path="name">Enter Owner Name:</form:label>
