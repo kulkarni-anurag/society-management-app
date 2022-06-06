@@ -27,7 +27,7 @@
                     <form:form method="post" modelAttribute="flat">
                         <div class="form-group">
                             <form:label path="fl_no">Flat Number:</form:label>
-                            <form:input type="text" class="form-control" path="fl_no" placeholder="Enter Flat Number" />
+                            <form:input type="number" class="form-control" path="fl_no" placeholder="Enter Flat Number" />
                             <form:errors path="fl_no" class="error" />
                         </div>
                         <div class="form-group">

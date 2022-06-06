@@ -1,33 +1,35 @@
 package com.anurag.springboot.societymanagementapp.model;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.Min;
 
 public class Flat {
 
-    @NotBlank(message = "Flat number should not be empty")
-    @Size(min = 4, message = "Flat number should be min 4 characters")
-    private String fl_no;
+    @Min(value = 1L, message = "Flat number should be at least 1")
+    private int fl_no;
+
+    @Min(value = 2L, message = "Flat should have min 2 rooms")
     private int rooms;
     private boolean balcony;
+
+    @Min(value = 100, message = "Flat should have at least 100 sq.m area")
     private double area;
 
     public Flat() {
         super();
     }
 
-    public Flat(String fl_no, int rooms, boolean balcony, double area) {
+    public Flat(int fl_no, int rooms, boolean balcony, double area) {
         this.fl_no = fl_no;
         this.rooms = rooms;
         this.balcony = balcony;
         this.area = area;
     }
 
-    public String getFl_no() {
+    public int getFl_no() {
         return fl_no;
     }
 
-    public void setFl_no(String fl_no) {
+    public void setFl_no(int fl_no) {
         this.fl_no = fl_no;
     }
 
