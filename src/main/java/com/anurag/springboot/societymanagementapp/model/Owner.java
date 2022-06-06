@@ -1,9 +1,21 @@
 package com.anurag.springboot.societymanagementapp.model;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 public class Owner {
     private int id;
+
+    @NotBlank(message = "Name is required")
+    @Size(min = 4, message = "Name should be at least 4 characters")
     private String name;
+
+    @NotBlank(message = "Email is required")
+    @Size(min = 4, message = "Email should be at least 4 characters")
     private String email;
+
+    @NotBlank(message = "Mobile is required")
+    @Size(min = 10, message = "Mobile number should be 10 digits")
     private String mobile;
 
     public Owner() {
