@@ -23,15 +23,15 @@ public class OwnerDAOImpl implements OwnerDAO {
 
     @Override
     public int update(Owner owner) {
-        String sql = "UPDATE Owners SET name = ?, email = ?, mobile = ? WHERE id = ?";
-        int update = jdbcTemplate.update(sql, owner.getName(), owner.getEmail(), owner.getMobile(), owner.getId());
+        String sql = "UPDATE Owners SET name = ?, email = ?, mobile = ? WHERE owner_id = ?";
+        int update = jdbcTemplate.update(sql, owner.getName(), owner.getEmail(), owner.getMobile(), owner.getOwner_id());
         return update;
     }
 
     @Override
-    public int delete(int id) {
-        String sql = "DELETE FROM Owners WHERE id = ?";
-        int delete = jdbcTemplate.update(sql, id);
+    public int delete(int owner_id) {
+        String sql = "DELETE FROM Owners WHERE owner_id = ?";
+        int delete = jdbcTemplate.update(sql, owner_id);
         return delete;
     }
 
@@ -44,10 +44,10 @@ public class OwnerDAOImpl implements OwnerDAO {
     }
 
     @Override
-    public Owner read(int id) {
-        String sql = "SELECT * FROM Owners WHERE id = ?";
+    public Owner read(int owner_id) {
+        String sql = "SELECT * FROM Owners WHERE owner_id = ?";
         BeanPropertyRowMapper<Owner> rowMapper = BeanPropertyRowMapper.newInstance(Owner.class);
-        Owner owner = jdbcTemplate.queryForObject(sql, rowMapper, id);
+        Owner owner = jdbcTemplate.queryForObject(sql, rowMapper, owner_id);
         return owner;
     }
     

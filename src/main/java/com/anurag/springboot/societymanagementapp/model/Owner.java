@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 public class Owner {
-    private int id;
+    private int owner_id;
 
     @NotBlank(message = "Name is required")
     @Size(min = 4, message = "Name should be at least 4 characters")
@@ -22,20 +22,20 @@ public class Owner {
         super();
     }
 
-    public Owner(int id, String name, String email, String mobile) {
+    public Owner(int owner_id, String name, String email, String mobile) {
         super();
-        this.id = id;
+        this.owner_id = owner_id;
         this.name = name;
         this.email = email;
         this.mobile = mobile;
     }
 
-    public int getId() {
-        return id;
+    public int getOwner_id() {
+        return owner_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setOwner_id(int owner_id) {
+        this.owner_id = owner_id;
     }
 
     public String getName() {
@@ -64,6 +64,6 @@ public class Owner {
 
     @Override
     public String toString() {
-        return "Owner [id=" + id + ", name=" + name + ", email=" + email + ", mobile=" + mobile + "]";
+        return "Owner [owner_id=" + owner_id + ", name=" + name + ", email=" + email + ", mobile=" + mobile + "]";
     }
 }

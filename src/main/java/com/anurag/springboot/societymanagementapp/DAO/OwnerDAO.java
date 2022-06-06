@@ -7,7 +7,7 @@ import com.anurag.springboot.societymanagementapp.model.Owner;
 public interface OwnerDAO {
     int create(Owner owner);
     int update(Owner owner);
-    int delete(int id);
+    int delete(int owner_id);
     List<Owner> read();
-    Owner read(int id);
+    Owner read(int owner_id);
 }

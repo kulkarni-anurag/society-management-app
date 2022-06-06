@@ -6,6 +6,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.anurag.springboot.societymanagementapp.model.Owner;
 
@@ -15,12 +16,14 @@ import jakarta.validation.Valid;
 public class OwnerController {
 
     @GetMapping(value = "/list-owners")
-    public String listOwnersPage(){
+    public String listOwnersPage(@RequestParam int fl_no){
+        System.out.println("Flat no is: " + fl_no);
         return "list-owners";
     }
 
     @GetMapping(value = "/add-owner")
-    public String showAddOwnersPage(ModelMap model){
+    public String showAddOwnersPage(@RequestParam int fl_no, ModelMap model){
+        System.out.println("Flat no is: " + fl_no);
         model.addAttribute("owner", new Owner());
         return "owners";
     }

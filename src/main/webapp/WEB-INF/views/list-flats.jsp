@@ -41,6 +41,8 @@
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item" href="/update-flat?fl_no=${flat.fl_no}">Update Flat</a>
                                             <a class="dropdown-item" href="/delete-flat?fl_no=${flat.fl_no}">Delete Flat</a>
+                                            <a class="dropdown-item" href="/list-owners?fl_no=${flat.fl_no}">List Owners</a>
+                                            <a class="dropdown-item" href="/add-owner?fl_no=${flat.fl_no}">Add Owner</a>
                                         </div>
                                     </div>
                                 </td>
