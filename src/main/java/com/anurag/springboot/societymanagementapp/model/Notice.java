@@ -3,7 +3,7 @@ package com.anurag.springboot.societymanagementapp.model;
 import java.util.Date;
 
 public class Notice {
-    private int id;
+    private int notice_id;
     private String description;
     private Date date;
     
@@ -11,19 +11,19 @@ public class Notice {
         super();
     }
 
-    public Notice(int id, String description, Date date) {
+    public Notice(int notice_id, String description, Date date) {
         super();
-        this.id = id;
+        this.notice_id = notice_id;
         this.description = description;
         this.date = date;
     }
 
-    public int getId() {
-        return id;
+    public int getNotice_id() {
+        return notice_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setNotice_id(int notice_id) {
+        this.notice_id = notice_id;
     }
 
     public String getDescription() {
@@ -44,6 +44,6 @@ public class Notice {
 
     @Override
     public String toString() {
-        return "Notice [id=" + id + ", description=" + description + ", date=" + date + "]";
+        return "Notice [notice_id=" + notice_id + ", description=" + description + ", date=" + date + "]";
     }
 }
