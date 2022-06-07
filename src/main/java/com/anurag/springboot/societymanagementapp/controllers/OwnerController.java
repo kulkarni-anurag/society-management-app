@@ -21,7 +21,8 @@ public class OwnerController {
     private OwnerService service;
 
     @GetMapping(value = "/list-owners")
-    public String listOwnersPage(@RequestParam int fl_no){
+    public String listOwnersPage(ModelMap model, @RequestParam int fl_no){
+        model.addAttribute("owners", service.getOwners(fl_no));
         return "list-owners";
     }
 

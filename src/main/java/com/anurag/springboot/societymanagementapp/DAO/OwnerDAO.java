@@ -11,4 +11,5 @@ public interface OwnerDAO {
     List<Owner> read();
     Owner read(int owner_id);
     Owner read(String email);
+    List<Owner> readSome(int fl_no);
 }

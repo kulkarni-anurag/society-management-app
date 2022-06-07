@@ -28,36 +28,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Virat Kohli</td>
-                            <td>virat.kohli@bcci.in</td>
-                            <td>9922992299</td>
-                            <td>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Actions</button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="/update-owner?id=1">Update Owner</a>
-                                        <a class="dropdown-item" href="/delete-flat?id=1">Delete Owner</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <!--<c:forEach items="${owners}" var="owner">
+                        <c:forEach items="${owners}" var="owner">
                             <tr>
-                                <td>${owner.fl_no}</td>
-                                <td>${owner.rooms}</td>
-                                <td>${owner.balcony}</td>
+                                <td>${owner.name}</td>
+                                <td>${owner.email}</td>
+                                <td>${owner.mobile}</td>
                                 <td>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Actions</button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="/update-owner?id=${owner.id}">Update Owner</a>
-                                            <a class="dropdown-item" href="/update-owner?id=${owner.id}">Delete Owner</a>
+                                            <a class="dropdown-item" href="/update-owner?id=${owner.owner_id}">Update Owner</a>
+                                            <a class="dropdown-item" href="/update-owner?id=${owner.owner_id}">Delete Owner</a>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                        </c:forEach>-->
+                        </c:forEach>
                     </tbody>
                 </table>
             </div>

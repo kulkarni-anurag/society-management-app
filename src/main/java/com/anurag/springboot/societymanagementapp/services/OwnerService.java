@@ -1,5 +1,7 @@
 package com.anurag.springboot.societymanagementapp.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,5 +27,9 @@ public class OwnerService {
     public void deleteOwner(Owner owner, int fl_no){
         ownerDAO.delete(owner.getOwner_id());
         flatOwnerDAO.delete(fl_no, owner.getOwner_id());
+    }
+
+    public List<Owner> getOwners(int fl_no){
+        return ownerDAO.readSome(fl_no);
     }
 }
