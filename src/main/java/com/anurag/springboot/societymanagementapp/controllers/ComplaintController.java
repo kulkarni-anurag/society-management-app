@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.anurag.springboot.societymanagementapp.model.Complaint;
 import com.anurag.springboot.societymanagementapp.services.ComplaintService;
 
+import jakarta.validation.Valid;
+
 @Controller
 public class ComplaintController {
 
@@ -39,7 +41,7 @@ public class ComplaintController {
     }
 
     @PostMapping(value = "/add-complaint")
-    public String handleAddComplaint(@ModelAttribute("complaint") Complaint complaint, BindingResult result){
+    public String handleAddComplaint(@Valid @ModelAttribute("complaint") Complaint complaint, BindingResult result){
         if(result.hasErrors()){
             return "complaints";
         }

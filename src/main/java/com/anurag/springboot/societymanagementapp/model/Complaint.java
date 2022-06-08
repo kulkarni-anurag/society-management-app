@@ -1,8 +1,15 @@
 package com.anurag.springboot.societymanagementapp.model;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Size;
+
 public class Complaint {
     private int id;
+
+    @Min(value = 101L, message = "Flat number should be at least 101")
     private int fl_no;
+
+    @Size(min = 10, message = "Description should be at least 10 characters")
     private String description;
     private boolean isResolved;
 

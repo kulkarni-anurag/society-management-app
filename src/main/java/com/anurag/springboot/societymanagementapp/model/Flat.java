@@ -4,7 +4,7 @@ import jakarta.validation.constraints.Min;
 
 public class Flat {
 
-    @Min(value = 1L, message = "Flat number should be at least 1")
+    @Min(value = 101L, message = "Flat number should be at least 101")
     private int fl_no;
 
     @Min(value = 2L, message = "Flat should have min 2 rooms")
