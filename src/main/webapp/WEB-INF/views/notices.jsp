@@ -31,7 +31,7 @@
                         </div>
                         <div class="form-group">
                             <form:label path="description">Enter Description:</form:label>
-                            <form:textarea class="form-control" path="description" placeholder="Enter Description"></form:textarea>
+                            <form:textarea class="form-control" path="description" placeholder="Enter Description" required="true"></form:textarea>
                             <form:errors path="description" class="error" />
                         </div>
                         <div class="form-group">

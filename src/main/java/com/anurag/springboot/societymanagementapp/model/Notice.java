@@ -2,9 +2,14 @@ package com.anurag.springboot.societymanagementapp.model;
 
 import java.util.Date;
 
+import jakarta.validation.constraints.Size;
+
 public class Notice {
     private int notice_id;
+
+    @Size(min = 10, message = "Description should be at least 10 characters")
     private String description;
+
     private Date date;
     
     public Notice() {

@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.anurag.springboot.societymanagementapp.model.Notice;
 import com.anurag.springboot.societymanagementapp.services.NoticeService;
 
+import jakarta.validation.Valid;
+
 @Controller
 public class NoticeController {
 
@@ -43,7 +45,7 @@ public class NoticeController {
     }
 
     @PostMapping(value = "/add-notice")
-    public String handleAddNotice(@ModelAttribute("notice") Notice notice, BindingResult result){
+    public String handleAddNotice(@Valid @ModelAttribute("notice") Notice notice, BindingResult result){
         if(result.hasErrors()){
             return "notices";
         }
@@ -58,7 +60,7 @@ public class NoticeController {
     }
 
     @PostMapping(value = "/update-notice")
-    public String handleUpdateNotice(@ModelAttribute("notice") Notice notice, BindingResult result){
+    public String handleUpdateNotice(@Valid @ModelAttribute("notice") Notice notice, BindingResult result){
         if(result.hasErrors()){
             return "notices";
         }
