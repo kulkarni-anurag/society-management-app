@@ -40,7 +40,7 @@
                                         <a href="/resolve?id=${complaint.id}" class="btn btn-success">Resolve</a>
                                     </c:if>
                                 </td>
-                                <td><a href="#" class="btn btn-danger">Delete</a></td>
+                                <td><a href="/delete-complaint?id=${complaint.id}" class="btn btn-danger">Delete</a></td>
                             </tr>
                         </c:forEach>
                     </tbody>
