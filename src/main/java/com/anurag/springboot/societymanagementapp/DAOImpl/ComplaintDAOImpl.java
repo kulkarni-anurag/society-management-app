@@ -52,5 +52,13 @@ public class ComplaintDAOImpl implements ComplaintDAO {
         Complaint complaint = jdbcTemplate.queryForObject(sql, rowMapper, id);
         return complaint;
     }
+
+    @Override
+    public List<Complaint> read(boolean isResolved) {
+        String sql = "SELECT * FROM Complaints WHERE isResolved = ?";
+        BeanPropertyRowMapper<Complaint> rowMapper = BeanPropertyRowMapper.newInstance(Complaint.class);
+        List<Complaint> result = jdbcTemplate.query(sql, rowMapper, isResolved);
+        return result;
+    }
     
 }

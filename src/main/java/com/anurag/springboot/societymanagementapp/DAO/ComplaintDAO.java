@@ -9,5 +9,6 @@ public interface ComplaintDAO {
     int update(Complaint complaint);
     int delete(int id);
     List<Complaint> read();
+    List<Complaint> read(boolean isResolved);
     Complaint read(int id);
 }
