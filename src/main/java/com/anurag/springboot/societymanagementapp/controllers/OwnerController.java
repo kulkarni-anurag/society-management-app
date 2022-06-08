@@ -22,6 +22,7 @@ public class OwnerController {
 
     @GetMapping(value = "/list-owners")
     public String listOwnersPage(ModelMap model, @RequestParam int fl_no){
+        model.addAttribute("fl_no", fl_no);
         model.addAttribute("owners", service.getOwners(fl_no));
         return "list-owners";
     }
@@ -38,7 +39,7 @@ public class OwnerController {
             return "owners";
         }
         service.addOwner(owner, fl_no);
-        return "redirect:list-flats";
+        return "redirect:list-owners?fl_no="+fl_no;
     }
 
     @GetMapping(value = "/update-owner")
@@ -55,5 +56,11 @@ public class OwnerController {
         }
         service.updateOwner(owner);
         return "redirect:list-flats";
+    }
+
+    @GetMapping(value = "/delete-owner")
+    public String deleteOwner(@RequestParam int fl_no, @RequestParam int owner_id){
+        service.deleteOwner(owner_id, fl_no);
+        return "redirect:list-owners?fl_no="+fl_no;
     }
 }

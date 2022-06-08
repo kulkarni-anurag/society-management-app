@@ -21,7 +21,7 @@ public class FlatOwnerDAOImpl implements FlatOwnerDAO {
 
     @Override
     public int delete(int fl_no, int owner_id) {
-        String sql = "DELETE FROM Flat_Owner WHERE fl_no = ?, owner_id = ?";
+        String sql = "DELETE FROM Flat_Owner WHERE fl_no = ? AND owner_id = ?";
         int delete = jdbcTemplate.update(sql, fl_no, owner_id);
         return delete;
     }

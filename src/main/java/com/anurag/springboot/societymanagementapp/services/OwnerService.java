@@ -28,9 +28,9 @@ public class OwnerService {
         ownerDAO.update(owner);
     }
 
-    public void deleteOwner(Owner owner, int fl_no){
-        ownerDAO.delete(owner.getOwner_id());
-        flatOwnerDAO.delete(fl_no, owner.getOwner_id());
+    public void deleteOwner(int owner_id, int fl_no){
+        ownerDAO.delete(owner_id);
+        flatOwnerDAO.delete(fl_no, owner_id);
     }
 
     public List<Owner> getOwners(int fl_no){
