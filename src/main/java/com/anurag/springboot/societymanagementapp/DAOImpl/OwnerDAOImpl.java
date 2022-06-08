@@ -63,7 +63,7 @@ public class OwnerDAOImpl implements OwnerDAO {
 
     @Override
     public List<Owner> readSome(int fl_no) {
-        String sql = "SELECT O.name, O.email, O.mobile FROM Owners O INNER JOIN Flat_Owner F ON F.owner_id = O.owner_id AND F.fl_no = ?";
+        String sql = "SELECT O.owner_id, O.name, O.email, O.mobile FROM Owners O INNER JOIN Flat_Owner F ON F.owner_id = O.owner_id AND F.fl_no = ?";
         BeanPropertyRowMapper<Owner> rowMapper = BeanPropertyRowMapper.newInstance(Owner.class);
         List<Owner> result = jdbcTemplate.query(sql, rowMapper, fl_no);
         return result;

@@ -40,4 +40,20 @@ public class OwnerController {
         service.addOwner(owner, fl_no);
         return "redirect:list-flats";
     }
+
+    @GetMapping(value = "/update-owner")
+    public String showUpdateOwnersPage(ModelMap model, @RequestParam int owner_id){
+        Owner owner = service.getOneOwner(owner_id);
+        model.addAttribute("owner", owner);
+        return "owners";
+    }
+
+    @PostMapping(value = "/update-owner")
+    public String handleUpdateOwner(@Valid @ModelAttribute("owner") Owner owner, BindingResult result){
+        if(result.hasErrors()){
+            return "owners";
+        }
+        service.updateOwner(owner);
+        return "redirect:list-flats";
+    }
 }

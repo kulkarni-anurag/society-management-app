@@ -24,6 +24,10 @@ public class OwnerService {
         flatOwnerDAO.create(fl_no, getNewOwner.getOwner_id());
     }
 
+    public void updateOwner(Owner owner){
+        ownerDAO.update(owner);
+    }
+
     public void deleteOwner(Owner owner, int fl_no){
         ownerDAO.delete(owner.getOwner_id());
         flatOwnerDAO.delete(fl_no, owner.getOwner_id());
@@ -31,5 +35,9 @@ public class OwnerService {
 
     public List<Owner> getOwners(int fl_no){
         return ownerDAO.readSome(fl_no);
+    }
+
+    public Owner getOneOwner(int owner_id){
+        return ownerDAO.read(owner_id);
     }
 }

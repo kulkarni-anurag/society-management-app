@@ -37,8 +37,8 @@
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Actions</button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="/update-owner?id=${owner.owner_id}">Update Owner</a>
-                                            <a class="dropdown-item" href="/update-owner?id=${owner.owner_id}">Delete Owner</a>
+                                            <a class="dropdown-item" href="/update-owner?owner_id=${owner.owner_id}">Update Owner</a>
+                                            <a class="dropdown-item" href="/update-owner?owner_id=${owner.owner_id}">Delete Owner</a>
                                         </div>
                                     </div>
                                 </td>
