@@ -34,13 +34,13 @@ public class ComplaintController {
         return "list-complaints";
     }
 
-    @GetMapping(value = "/add-complaint")
+    @GetMapping(value = "/add-query")
     public String showAddComplaintsPage(ModelMap model){
         model.addAttribute("complaint", new Complaint());
         return "complaints";
     }
 
-    @PostMapping(value = "/add-complaint")
+    @PostMapping(value = "/add-query")
     public String handleAddComplaint(@Valid @ModelAttribute("complaint") Complaint complaint, BindingResult result){
         if(result.hasErrors()){
             return "complaints";
