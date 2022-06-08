@@ -3,9 +3,13 @@ package com.anurag.springboot.societymanagementapp.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.anurag.springboot.societymanagementapp.model.Complaint;
 import com.anurag.springboot.societymanagementapp.services.ComplaintService;
 
 @Controller
@@ -26,6 +30,21 @@ public class ComplaintController {
         model.addAttribute("status", false);
         model.addAttribute("complaints", service.getUnResolvedComplaints());
         return "list-complaints";
+    }
+
+    @GetMapping(value = "/add-complaint")
+    public String showAddComplaintsPage(ModelMap model){
+        model.addAttribute("complaint", new Complaint());
+        return "complaints";
+    }
+
+    @PostMapping(value = "/add-complaint")
+    public String handleAddComplaint(@ModelAttribute("complaint") Complaint complaint, BindingResult result){
+        if(result.hasErrors()){
+            return "complaints";
+        }
+        service.addComplaint(complaint);
+        return "redirect:list-unresolved-complaints";
     }
 
     @GetMapping(value = "/resolve")
