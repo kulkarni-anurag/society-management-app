@@ -2,7 +2,7 @@ package com.anurag.springboot.societymanagementapp.model;
 
 public class Complaint {
     private int id;
-    private String fl_no;
+    private int fl_no;
     private String description;
     private boolean isResolved;
 
@@ -10,7 +10,7 @@ public class Complaint {
         super();
     }
 
-    public Complaint(int id, String fl_no, String description, boolean isResolved) {
+    public Complaint(int id, int fl_no, String description, boolean isResolved) {
         super();
         this.id = id;
         this.fl_no = fl_no;
@@ -26,11 +26,11 @@ public class Complaint {
         this.id = id;
     }
 
-    public String getFl_no() {
+    public int getFl_no() {
         return fl_no;
     }
 
-    public void setFl_no(String fl_no) {
+    public void setFl_no(int fl_no) {
         this.fl_no = fl_no;
     }
 

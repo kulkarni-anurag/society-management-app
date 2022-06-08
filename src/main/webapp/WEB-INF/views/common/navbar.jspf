@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <!-- Brand -->
-    <a class="navbar-brand" href="#">Society Management App</a>
+    <a class="navbar-brand" href="/">Society Management App</a>
       
     <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -22,6 +22,13 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/list-notices">List Notices</a>
                     <a class="dropdown-item" href="/add-notice">Add Notice</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Complaints</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/list-resolved-complaints">View Resolved</a>
+                    <a class="dropdown-item" href="/list-unresolved-complaints">View Unresolved</a>
                 </div>
             </li>
         </ul>
