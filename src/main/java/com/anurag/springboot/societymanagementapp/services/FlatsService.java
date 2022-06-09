@@ -18,7 +18,7 @@ public class FlatsService {
         return flatDao.read();
     }
 
-    public Flat getOneFlat(String fl_no){
+    public Flat getOneFlat(int fl_no){
         return flatDao.read(fl_no);
     }
 
@@ -30,7 +30,7 @@ public class FlatsService {
         flatDao.update(flat);
     }
 
-    public void removeFlat(String fl_no){
+    public void removeFlat(int fl_no){
         flatDao.delete(fl_no);
     }
 }

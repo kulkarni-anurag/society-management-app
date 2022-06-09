@@ -7,7 +7,7 @@ import com.anurag.springboot.societymanagementapp.model.Flat;
 public interface FlatDAO {
     int create(Flat flat);
     int update(Flat flat);
-    int delete(String fl_no);
-    Flat read(String fl_no);
+    int delete(int fl_no);
+    Flat read(int fl_no);
     List<Flat> read();
 }

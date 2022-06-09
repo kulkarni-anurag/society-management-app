@@ -39,7 +39,7 @@ public class FlatDAOImpl implements FlatDAO {
     }
 
     @Override
-    public int delete(String fl_no) {
+    public int delete(int fl_no) {
         String sql = "DELETE FROM Flats WHERE fl_no = ?";
         int delete = jdbcTemplate.update(sql, fl_no);
         return delete;
@@ -54,7 +54,7 @@ public class FlatDAOImpl implements FlatDAO {
     }
 
     @Override
-    public Flat read(String fl_no) {
+    public Flat read(int fl_no) {
         String sql = "SELECT * FROM Flats WHERE fl_no = ?";
         BeanPropertyRowMapper<Flat> rowMapper = BeanPropertyRowMapper.newInstance(Flat.class);
         Flat result = jdbcTemplate.queryForObject(sql, rowMapper, fl_no);

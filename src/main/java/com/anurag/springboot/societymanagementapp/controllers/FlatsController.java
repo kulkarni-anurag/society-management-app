@@ -42,7 +42,7 @@ public class FlatsController {
     }
 
     @GetMapping(value = "/update-flat")
-    public String showUpdateFlatsPage(ModelMap model, @RequestParam String fl_no){
+    public String showUpdateFlatsPage(ModelMap model, @RequestParam int fl_no){
         model.addAttribute("flat", service.getOneFlat(fl_no));
         return "flats";
     }
@@ -57,7 +57,7 @@ public class FlatsController {
     }
 
     @GetMapping(value = "/delete-flat")
-    public String handleDeleteFlat(@RequestParam String fl_no){
+    public String handleDeleteFlat(@RequestParam int fl_no){
         service.removeFlat(fl_no);
         return "redirect:list-flats";
     }
