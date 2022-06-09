@@ -38,6 +38,12 @@ public class NoticeController {
         return "list-notices";
     }
 
+    @GetMapping(value = "/announcements")
+    public String showAnnouncements(ModelMap model){
+        model.addAttribute("notices", service.getAllAnnouncements());
+        return "announcements";
+    }
+
     @GetMapping(value = "/add-notice")
     public String showAddNoticePage(ModelMap model){
         model.addAttribute("notice", new Notice());

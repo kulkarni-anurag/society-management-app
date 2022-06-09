@@ -1,5 +1,6 @@
 package com.anurag.springboot.societymanagementapp.services;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,12 @@ public class NoticeService {
 
     public List<Notice> getAllNotices(){
         return noticeDAO.read();
+    }
+
+    public List<Notice> getAllAnnouncements(){
+        List<Notice> list = noticeDAO.read();
+        Collections.sort(list, Collections.reverseOrder());
+        return list;
     }
 
     public Notice getOneNotice(int notice_id){
